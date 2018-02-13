@@ -63,7 +63,7 @@ sayIt(hawaiianTranslator);
 
 */
 
-
+/*
 var passengers = [
   { name: "Jane Doloop", paid: true },
   { name: "Dr. Evel", paid: true },
@@ -98,6 +98,8 @@ var allPaid = processPassengers(passengers, checkNotPaid);
 
 var passengersInformation = processPassengers(passengers, printPassenger);
 
+*/
+
 /*
 if (!allFly) {
   console.log("The plane can't take off: there is Dr. Evel.");
@@ -111,3 +113,26 @@ if (!allPaid) {
   console.log("All fine! Good luck!");
 }
 */
+
+function fun(echo) {
+  console.log(echo);
+};
+
+fun("hello");
+
+function boo(aFunction) {
+  aFunction("boo");
+}
+
+boo(fun);
+console.log(fun);
+
+var moreFun = fun;
+moreFun("hello again");
+
+function echoMaker() {
+  return fun;
+}
+
+var bigFun = echoMaker();
+bigFun("Is there an echo?");
