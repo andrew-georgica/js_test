@@ -46,3 +46,45 @@ b = c;
 a();
 
 */
+
+/*
+
+function sayIt(translator) {
+  var phrase = translator("Hello");
+  alert(phrase);
+}
+
+function hawaiianTranslator(world) {
+  if (world === "Hello") return "Aloha";
+  if (world === "Goodbye") return "Aloha";
+}
+
+sayIt(hawaiianTranslator);
+
+*/
+
+
+var passengers = [
+  { name: "Jane Doloop", paid: true },
+  { name: "Dr. Evel", paid: true },
+  { name: "Sue Property", paid: false },
+  { name: "John Funcall", paid: true }
+];
+
+function checkPaid(passengers) {
+  for (var i = 0; i < passengers.length; i++) {
+    if (!passengers[i].paid) {
+        return false;
+    }
+  }
+
+  return true;
+}
+
+function checkNoFlyList(passenger) {
+  return (passenger.name === "Dr. Evel");
+}
+
+function checkNotPaid(passenger) {
+  return (!passenger.paid);
+}
