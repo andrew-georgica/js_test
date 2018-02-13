@@ -71,13 +71,12 @@ var passengers = [
   { name: "John Funcall", paid: true }
 ];
 
-function checkPaid(passengers) {
+function processPassengers(passengers, testFunction) {
   for (var i = 0; i < passengers.length; i++) {
-    if (!passengers[i].paid) {
-        return false;
+    if (testFunction(passengers[i])) {
+      return false;
     }
   }
-
   return true;
 }
 
@@ -88,3 +87,27 @@ function checkNoFlyList(passenger) {
 function checkNotPaid(passenger) {
   return (!passenger.paid);
 }
+
+function printPassenger(passenger) {
+  console.log("Passenger name: " + passenger.name + "; " + "Paid: " + passenger.paid);
+}
+
+var allFly = processPassengers(passengers, checkNoFlyList);
+
+var allPaid = processPassengers(passengers, checkNotPaid);
+
+var passengersInformation = processPassengers(passengers, printPassenger);
+
+/*
+if (!allFly) {
+  console.log("The plane can't take off: there is Dr. Evel.");
+} else {
+  console.log("All fine! Good luck!");
+}
+
+if (!allPaid) {
+  console.log("The plane can't take off: not everyone has paid.");
+} else {
+  console.log("All fine! Good luck!");
+}
+*/
