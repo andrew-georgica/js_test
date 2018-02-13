@@ -21,6 +21,8 @@ if (migration) {
 }
 */
 
+/*
+
 var winner = function() {
   alert("WINNER!")
 };
@@ -42,3 +44,5 @@ a = b;
 b = c;
 
 a();
+
+*/
