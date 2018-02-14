@@ -114,6 +114,7 @@ if (!allPaid) {
 }
 */
 
+/*
 function fun(echo) {
   console.log(echo);
 };
@@ -136,3 +137,49 @@ function echoMaker() {
 
 var bigFun = echoMaker();
 bigFun("Is there an echo?");
+*/
+
+
+function createDrinkOrder(passenger) {
+  var orderFunction;
+
+  if (passenger.ticket === "firstclass") {
+    orderFunction = function() {
+      console.log("Would you like a cocktail or wine?");
+    };
+  } else {
+    orderFunction = function() {
+      console.log("Your choice is cola or water.");
+    };
+  }
+
+  return orderFunction;
+
+}
+
+function serveCustomer(passenger) {
+  var getDrinkOrderFunction = createDrinkOrder(passenger);
+
+  getDrinkOrderFunction();
+  getDrinkOrderFunction();
+  
+}
+
+function servePassengers(passengers) {
+  for (var i = 0; i < passengers.length; i++) {
+    serveCustomer(passengers[i]);
+  }
+}
+
+// Variables
+
+var passengers = [
+  { name: "Jane Doloop", paid: true, ticket: "coach" },
+  { name: "Dr. Evel", paid: true, ticket: "firstclass" },
+  { name: "Sue Property", paid: false, ticket: "firstclass" },
+  { name: "John Funcall", paid: true, ticket: "coach" }
+];
+
+// Function call
+
+servePassengers(passengers);
