@@ -139,7 +139,7 @@ var bigFun = echoMaker();
 bigFun("Is there an echo?");
 */
 
-
+/*
 function createDrinkOrder(passenger) {
   var orderFunction;
 
@@ -215,3 +215,5 @@ var passengers = [
 // Function call
 
 servePassengers(passengers);
+
+*/
