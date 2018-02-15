@@ -147,9 +147,35 @@ function createDrinkOrder(passenger) {
     orderFunction = function() {
       console.log("Would you like a cocktail or wine?");
     };
+  } else if (passenger.ticket === "premium") {
+      orderFunction = function() {
+        console.log("Would you like wine, cola or water?");
+      };
+  } else {
+      orderFunction = function() {
+        console.log("Your choice is cola or water.");
+      };
+  }
+
+  return orderFunction;
+
+}
+
+
+function createDinnerOrder(passenger) {
+  var orderFunction;
+
+  if (passenger.ticket === "firstclass") {
+    orderFunction = function() {
+      console.log("Would you like chicken or pasta?");
+    };
+  } else if (passenger.ticket === "premium") {
+    orderFunction = function() {
+      console.log("Would you like a snack box or cheese plate?");
+    };
   } else {
     orderFunction = function() {
-      console.log("Your choice is cola or water.");
+      console.log("Would you like peanuts or pretzels?");
     };
   }
 
@@ -157,12 +183,18 @@ function createDrinkOrder(passenger) {
 
 }
 
+
 function serveCustomer(passenger) {
   var getDrinkOrderFunction = createDrinkOrder(passenger);
+  var getDinnerOrderFunction = createDinnerOrder(passenger);
+
+  getDrinkOrderFunction();
+
+  getDinnerOrderFunction();
 
   getDrinkOrderFunction();
   getDrinkOrderFunction();
-  
+
 }
 
 function servePassengers(passengers) {
@@ -177,7 +209,7 @@ var passengers = [
   { name: "Jane Doloop", paid: true, ticket: "coach" },
   { name: "Dr. Evel", paid: true, ticket: "firstclass" },
   { name: "Sue Property", paid: false, ticket: "firstclass" },
-  { name: "John Funcall", paid: true, ticket: "coach" }
+  { name: "John Funcall", paid: true, ticket: "premium" }
 ];
 
 // Function call
