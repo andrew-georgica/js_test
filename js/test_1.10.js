@@ -217,3 +217,117 @@ var passengers = [
 servePassengers(passengers);
 
 */
+
+
+/* PRODUCTS */
+
+// tests
+
+/*
+function compareNumbers(num1, num2) {
+  if (num1 > num2) {
+    return 1;
+  } else if (num1 === num2) {
+    return 0;
+  } else {
+    return -1;
+  }
+}
+
+var numbersArray = [60, 50, 62, 58, 54, 54];
+
+numbersArray.sort(compareNumbers);
+console.log(numbersArray);
+*/
+
+// end tests
+
+// program
+
+  // functions
+
+function compareSold(colaA, colaB) {
+  return colaA.sold - colaB.sold;
+}
+
+function compareName(colaA, colaB) {
+  var colaA = colaA.name.toUpperCase();
+  var colaB = colaB.name.toUpperCase();
+  if (colaA < colaB) {
+    return -1;
+  }
+  if (colaA > colaB) {
+    return 1;
+  }
+
+  return 0;
+}
+
+function compareCalories(colaA, colaB) {
+  return colaA.calories - colaB.calories;
+}
+
+function compareColor(colaA, colaB) {
+  var colaA = colaA.color.toUpperCase();
+  var colaB = colaB.color.toUpperCase();
+  if (colaA < colaB) {
+    return -1;
+  }
+  if (colaA > colaB) {
+    return 1;
+  }
+
+  return 0;
+}
+
+function printProducts(products) {
+  for (var i = 0; i < products.length; i++) {
+    console.log(
+      "Name: " + products[i].name + ", Calories: " +
+      products[i].calories + ", Color: " + products[i].color +
+      ", Sold: " + products[i].sold
+    );
+  }
+}
+
+  // end functions
+
+  // varibels
+
+products = [
+  { name: "Grapefruit", calories: 170, color: "red", sold: 8200 },
+  { name: "Orange", calories: 160, color: "orange", sold: 12101 },
+  { name: "Cola", calories: 210, color: "caramel", sold: 25412 },
+  { name: "Diet Cola", calories: 0, color: "caramel", sold: 43922 },
+  { name: "Lemon", calories: 200, color: "clear", sold: 14983 },
+  { name: "Raspberry", calories: 180, color: "pink", sold: 9427 },
+  { name: "Root Beer", calories: 200, color: "caramel", sold: 9909 },
+  { name: "Water", calories: 0, color: "clear", sold: 62123 }
+];
+
+  // end varibels
+
+  // result
+
+console.log("---------- SOURCE ----------");
+printProducts(products);
+
+console.log("---------- BY SOLD ----------");
+products.sort(compareSold);
+printProducts(products);
+
+console.log("---------- BY NAME ----------");
+products.sort(compareName);
+printProducts(products);
+
+console.log("---------- BY CALORIES ----------");
+products.sort(compareCalories);
+printProducts(products);
+
+console.log("---------- BY COLOR ----------");
+products.sort(compareColor);
+printProducts(products);
+
+  // end result
+
+// end programs
