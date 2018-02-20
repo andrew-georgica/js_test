@@ -42,6 +42,7 @@ function done() {
 */
 
 
+/*
 function vaccine(dosage) {
   if (dosage > 0) {
     var b = inject(dosage);
@@ -64,3 +65,32 @@ var patient = "John Smith";
 var time = "6PM";
 
 administer(patient, vaccine, time);
+*/
+
+
+var migrating = true;
+
+var fly = function(num) {
+  var sound = "Flying!";
+  function wingFlapper() {
+    console.log(sound);
+  }
+  for (var i = 0; i < num; i++) {
+    wingFlapper();
+  };
+}
+
+function quack(num) {
+  var sound = "Quack!";
+  function quacker() {
+    console.log(sound);
+  }
+  for (var i = 0; i < num; i++) {
+    quacker();
+  };
+}
+
+if (migrating) {
+  quack(4);
+  fly(4);
+}
