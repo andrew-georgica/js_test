@@ -67,7 +67,7 @@ var time = "6PM";
 administer(patient, vaccine, time);
 */
 
-
+/*
 var migrating = true;
 
 var fly = function(num) {
@@ -82,9 +82,11 @@ var fly = function(num) {
 
 function quack(num) {
   var sound = "Quack!";
+
   function quacker() {
     console.log(sound);
   }
+
   for (var i = 0; i < num; i++) {
     quacker();
   };
@@ -94,3 +96,20 @@ if (migrating) {
   quack(4);
   fly(4);
 }
+*/
+
+var justAVar = "Oh, don't you worry about it, I'm GLOBAL";
+
+function whereAreYou() {
+  var justAVar = "Just an every day LOCAL";
+
+  function inner() {
+    return justAVar;
+  }
+
+  return inner;
+}
+
+var innerFunction = whereAreYou();
+var result = innerFunction();
+console.log(result);
