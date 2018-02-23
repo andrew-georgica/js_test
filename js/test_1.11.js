@@ -149,6 +149,7 @@ console.log("Guessing 'nope': " + tryGuess("nope"));
 console.log("Guessing 'secret': " + tryGuess("secret"));
 */
 
+/*
 function multN(n) {
   return function multiplate (num) {
     return num * n;
@@ -158,3 +159,54 @@ function multN(n) {
 var a = multN(3);
 console.log(a(5));
 console.log(a(10));
+*/
+
+/*
+function makeTimer(doneMessage, n) {
+
+  setTimeout(function() {
+    alert(doneMessage);
+  }, n);
+  і
+}
+
+makeTimer("Cookies are done!", 1000);
+*/
+
+/*
+function makeTimer(doneMessage, n) {
+  setTimeout(handler, n);
+}
+
+function handler() {
+  alert(doneMessage);
+}
+
+makeTimer("Cookies are done!", 1000);
+*/
+
+/*
+function setTimer(doneMessage, n) {
+
+  setTimeout(function() {
+    alert(doneMessage);
+  }, n);
+
+  doneMessage = "OUCH!";
+
+}
+
+setTimer("Cookies are done!", 1000);
+*/
+
+window.onload = function() {
+  var count = 0;
+  var message = "You clicked me ";
+  var div = document.getElementById("message");
+
+  var button = document.getElementById("clickme");
+  button.onclick = function () {
+    count++;
+    div.innerHTML = message + count + " times!";
+  };
+}
